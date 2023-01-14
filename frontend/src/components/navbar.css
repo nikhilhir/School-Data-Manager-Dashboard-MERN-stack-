@@ -1,0 +1,131 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none ;
+}
+
+button{
+    width:100px;
+    height:35px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 200px;
+}
+
+button:hover{
+    color:antiquewhite
+}
+i{
+   font-size: 12px;
+   margin-left: 8px; 
+}
+
+ul li:hover>ul{
+    display: block;
+}
+
+nav img{
+    width:150px;
+    position:absolute;
+    top:17px;
+    left:12%
+}
+
+nav ul{
+    float: right;
+    margin-right:25px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 15px;
+
+}
+
+nav ul li a{
+    position: relative;
+    color: black;
+    font-size: 18px;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+nav ul li a:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s linear;
+}
+
+nav ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+label #btn,
+label #cancle{
+    color: white;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media (max-width:860px) {
+
+    label #btn{
+        display: block;
+    }
+    nav{
+        position: fixed;
+        width: 100%;
+    }
+    ul{
+        position: absolute;
+        width: 50%;
+        height:10vh;
+        background: #728aa2;
+        top: 150px;
+        left:-100px;
+        text-align: center;
+        transition: all 0.5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 10px;
+    }
+     nav ul li a {
+      font-size: 20px;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+    #check:checked ~ label #btn {
+      display: none;
+    }
+    #check:checked ~ label #cancle {
+      display: block;
+    }
+    
+}
